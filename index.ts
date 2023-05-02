@@ -22,7 +22,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "https://supertoken-auth-frt2.vercel.app/",
+    origin: "*",
     allowedHeaders: ["content-type", ...supertokens.getAllCORSHeaders()],
     methods: ["GET", "PUT", "POST", "DELETE"],
     credentials: true,
