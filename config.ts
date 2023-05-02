@@ -6,7 +6,7 @@ import User from "./model/userModel";
 import randomWords from "random-words";
 
 export function getApiDomain() {
-  return "https://supertoken-backend.onrender.com/";
+  return "https://supertoken-backend-production-a15a.up.railway.app";
 }
 
 export function getWebsiteDomain() {
@@ -23,7 +23,7 @@ export const SuperTokensConfig: TypeInput = {
   },
   appInfo: {
     appName: "Supertoken Workspace",
-    apiDomain: "https://supertoken-backend.onrender.com/",
+    apiDomain: "https://supertoken-backend-production-a15a.up.railway.app",
     websiteDomain: "https://supertoken-auth-frt2.vercel.app/",
     apiBasePath: "/api/auth",
   },
