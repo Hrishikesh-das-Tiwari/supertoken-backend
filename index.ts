@@ -29,7 +29,7 @@ app.use(
   })
 );
 
-const DB = "mongodb+srv://supertoken.pzbh7jq.mongodb.net/myFirstDatabase";
+const DB = "mongodb+srv://supertoken.drb5odg.mongodb.net/myFirstDatabase";
 
 mongoose.connect(DB).then(() => {
   console.log("DB connection successful");
