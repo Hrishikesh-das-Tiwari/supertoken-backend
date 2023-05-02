@@ -48,7 +48,7 @@ app.get(
   getMyWorkspace
 );
 
-app.post("/workspace", verifySession(), createNewWorkspace);
+app.post("/workspace", createNewWorkspace);
 app.delete("/workspace/:workspaceId", verifySession(), deleteWorkspace);
 
 app.delete("/user", verifySession(), deleteUserForId);

@@ -9,7 +9,8 @@ import Workspace from "../model/workspaceModel";
 const AppError = require("../util/appError");
 
 const client = jwksClient({
-  jwksUri: "http://localhost:3001/auth/jwt/jwks.json",
+  jwksUri:
+    "https://supertoken-backend-production-a15a.up.railway.app/auth/jwt/jwks.json",
 });
 
 function getKey(header: JwtHeader, callback: SigningKeyCallback) {
