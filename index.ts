@@ -8,7 +8,7 @@ import {
   errorHandler,
   SessionRequest,
 } from "supertokens-node/framework/express";
-import { getWebsiteDomain, SuperTokensConfig } from "./config";
+import { SuperTokensConfig } from "./config";
 import {
   getMyWorkspace,
   createNewWorkspace,
@@ -22,9 +22,8 @@ const app = express();
 
 app.use(
   cors({
-    origin: "*",
+    origin: "https://supertoken-auth-frt2.vercel.app",
     allowedHeaders: ["content-type", ...supertokens.getAllCORSHeaders()],
-    methods: ["GET", "PUT", "POST", "DELETE"],
     credentials: true,
   })
 );
