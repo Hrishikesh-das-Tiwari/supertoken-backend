@@ -29,7 +29,7 @@ app.use(
   })
 );
 
-const DB = "mongodb://localhost:27017/workspace";
+const DB = "mongodb+srv://supertoken.pzbh7jq.mongodb.net/myFirstDatabase";
 
 mongoose.connect(DB).then(() => {
   console.log("DB connection successful");
@@ -47,7 +47,7 @@ app.delete("/user", verifySession(), deleteUserForId);
 app.get("/getJWT", verifySession(), async (req: SessionRequest, res) => {
   let session = req.session;
   let jwt = session?.getAccessTokenPayload()["jwt"];
-  res.json({ token: jwt });
+  return res.json({ token: jwt });
 });
 
 // An example API that requires session verification
