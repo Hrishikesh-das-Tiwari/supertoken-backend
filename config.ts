@@ -6,33 +6,24 @@ import User from "./model/userModel";
 import randomWords from "random-words";
 
 export function getApiDomain() {
-  let host = window.location.hostname;
-  if (host === "localhost") {
-    return "http://localhost:3001";
-  }
-
-  let port = window.location.port;
-  if (port !== "0" && port !== "80" && port !== "443" && port !== "") {
-    return "https://" + host + ":" + port;
-  }
-  return "https://" + host;
+  return "https://supertoken-backend.onrender.com/";
 }
 
 export function getWebsiteDomain() {
-  const websitePort = process.env.REACT_APP_WEBSITE_PORT || 3000;
-  const websiteUrl =
-    process.env.REACT_APP_WEBSITE_URL || `http://localhost:${websitePort}`;
-  return websiteUrl;
+  return "https://supertoken-auth-frt2.vercel.app/";
 }
 
 export const SuperTokensConfig: TypeInput = {
+  framework: "express",
   supertokens: {
-    // this is the location of the SuperTokens core.
-    connectionURI: "https://try.supertokens.com",
+    // These are the connection details of the app you created on supertokens.com
+    connectionURI:
+      "https://dev-1c0a8771e8ff11edb9b8b90a35a84dea-eu-west-1.aws.supertokens.io:3570",
+    apiKey: "JSYN4bLubgvKvv8CHuO9InTaWPCJH=",
   },
   appInfo: {
     appName: "Supertoken Workspace",
-    apiDomain: process.env.VERCEL_URL,
+    apiDomain: "https://supertoken-backend.onrender.com/",
     websiteDomain: "https://supertoken-auth-frt2.vercel.app/",
     apiBasePath: "/api/auth",
   },
