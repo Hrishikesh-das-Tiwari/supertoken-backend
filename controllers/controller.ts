@@ -41,7 +41,7 @@ export const getMyWorkspace = async (
   next: NextFunction
 ) => {
   try {
-    verifyJWT(req, res);
+    // verifyJWT(req, res);
     let userId = req!.session!.getUserId();
     const myWorkspace = await Workspace.find({ user: userId });
 
@@ -62,7 +62,7 @@ export const createNewWorkspace = async (
   next: NextFunction
 ) => {
   try {
-    verifyJWT(req, res);
+    // verifyJWT(req, res);
     let userId = req!.session!.getUserId();
     await Workspace.create({
       name: randomWords(1)[0],
