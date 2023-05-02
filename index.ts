@@ -34,13 +34,11 @@ mongoose.connect(DB).then(() => {
   console.log("DB connection successful");
 });
 
+// This exposes all the APIs from SuperTokens to the client.
+app.use(middleware());
 app.get("/", (req, res) => {
   res.send("hello there!");
 });
-
-// This exposes all the APIs from SuperTokens to the client.
-app.use(middleware());
-
 app.get(
   "/workspace",
   () => console.log("workspace"),
