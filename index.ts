@@ -73,4 +73,5 @@ app.get("/sessioninfo", verifySession(), async (req: SessionRequest, res) => {
 // returns 401 to the client.
 app.use(errorHandler());
 
-app.listen(3001, () => console.log(`API Server listening on port 3001`));
+const PORT = process.env.PORT || 3001;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
