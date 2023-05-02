@@ -34,6 +34,10 @@ mongoose.connect(DB).then(() => {
   console.log("DB connection successful");
 });
 
+app.get("/", (req, res) => {
+  res.send("hello there!");
+});
+
 // This exposes all the APIs from SuperTokens to the client.
 app.use(middleware());
 
@@ -46,10 +50,6 @@ app.get(
 
 app.post("/workspace", verifySession(), createNewWorkspace);
 app.delete("/workspace/:workspaceId", verifySession(), deleteWorkspace);
-
-app.get("/", (req, res) => {
-  res.send("hello there!");
-});
 
 app.delete("/user", verifySession(), deleteUserForId);
 
