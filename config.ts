@@ -6,9 +6,16 @@ import User from "./model/userModel";
 import randomWords from "random-words";
 
 export function getApiDomain() {
-  const apiPort = process.env.REACT_APP_API_PORT || 3001;
-  const apiUrl = process.env.REACT_APP_API_URL || `http://localhost:${apiPort}`;
-  return apiUrl;
+  let host = window.location.hostname;
+  if (host === "localhost") {
+    return "http://localhost:3001";
+  }
+
+  let port = window.location.port;
+  if (port !== "0" && port !== "80" && port !== "443" && port !== "") {
+    return "https://" + host + ":" + port;
+  }
+  return "https://" + host;
 }
 
 export function getWebsiteDomain() {
@@ -26,9 +33,8 @@ export const SuperTokensConfig: TypeInput = {
   appInfo: {
     appName: "Supertoken Workspace",
     apiDomain: process.env.VERCEL_URL,
-    websiteDomain: process.env.VERCEL_URL,
+    websiteDomain: "https://supertoken-auth-frt2.vercel.app/",
     apiBasePath: "/api/auth",
-    websiteBasePath: "/auth",
   },
   // recipeList contains all the modules that you want to
   // use from SuperTokens. See the full list here: https://supertokens.com/docs/guides

@@ -5,7 +5,8 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "start": "npx ts-node-dev --project ./tsconfig.json ./index.ts"
+        "start": "npx ts-node-dev --project ./tsconfig.json ./index.ts",
+        "build":"npm install"
     },
     "dependencies": {
         "cors": "^2.8.5",
