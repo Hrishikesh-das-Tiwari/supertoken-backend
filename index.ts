@@ -36,13 +36,15 @@ mongoose.connect(DB).then(() => {
 
 // This exposes all the APIs from SuperTokens to the client.
 app.use(middleware());
+
 app.get("/", (req, res) => {
   res.send("hello there!");
 });
+
 app.get(
   "/workspace",
   () => console.log("workspace"),
-  verifySession(),
+  // verifySession(),
   getMyWorkspace
 );
 
