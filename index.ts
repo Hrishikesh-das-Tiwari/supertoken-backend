@@ -47,6 +47,10 @@ app.get(
 app.post("/workspace", verifySession(), createNewWorkspace);
 app.delete("/workspace/:workspaceId", verifySession(), deleteWorkspace);
 
+app.get("/", (req, res) => {
+  res.send("hello there!");
+});
+
 app.delete("/user", verifySession(), deleteUserForId);
 
 app.get("/getJWT", verifySession(), async (req: SessionRequest, res) => {
